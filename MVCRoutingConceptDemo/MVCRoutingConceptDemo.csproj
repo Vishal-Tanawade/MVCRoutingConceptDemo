@@ -168,6 +168,7 @@
     <Content Include="Views\Customer\AddCustomer.cshtml" />
     <Content Include="Views\Customer\CustomerDetails.cshtml" />
     <Content Include="Views\Customer\CustomerDetailsWithid.cshtml" />
+    <Content Include="Views\Customer\CustomerDetailsWithRegularExpression.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
