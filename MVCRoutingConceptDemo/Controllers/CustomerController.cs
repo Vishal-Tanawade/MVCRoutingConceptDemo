@@ -41,6 +41,9 @@ namespace MVCRoutingConceptDemo.Controllers
             return View(CustomerList);
         }
 
+
+        //http://localhost:55203/Customer/AddCustomer 
+        // goto manually this url 
         [HttpGet]
         public ActionResult AddCustomer()
         {
@@ -64,7 +67,9 @@ namespace MVCRoutingConceptDemo.Controllers
         }
 
       [HttpGet]
-      public ActionResult CustomerDetailsWithid(int? id)
+        //http://localhost:55203/Customer/CustomerDetailsWithid/{id}
+        // goto this url manually
+        public ActionResult CustomerDetailsWithid(int? id)
         {
             ClsCustomer cust = customers.FirstOrDefault(x => x.CustCode == id);
             return View(cust);
@@ -79,76 +84,6 @@ namespace MVCRoutingConceptDemo.Controllers
             return View(cust);
         }
 
-        // GET: Customer/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Customer/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Customer/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Customer/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Customer/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Customer/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Customer/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+      
     }
 }
