@@ -55,6 +55,17 @@ namespace MVCRoutingConceptDemo.Controllers
             return View("CustomerDetails",clsCustomer);
         }
 
+
+        [HttpGet]
+        public ActionResult CustomerDetails(ClsCustomer clsCustomer)
+        {
+            ClsCustomer cust = customers.FirstOrDefault(x => x.CustCode == clsCustomer.CustCode);
+            return View(cust);
+        }
+
+      
+
+
         // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
