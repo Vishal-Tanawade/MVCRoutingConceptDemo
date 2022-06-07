@@ -41,6 +41,20 @@ namespace MVCRoutingConceptDemo.Controllers
             return View(CustomerList);
         }
 
+        [HttpGet]
+        public ActionResult AddCustomer()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddCustomer(ClsCustomer clsCustomer)
+        {
+            customers.Add(clsCustomer);
+          //  return RedirectToAction("CustomerDetails", clsCustomer);
+            return View("CustomerDetails",clsCustomer);
+        }
+
         // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
