@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MVCRoutingConceptDemo.Controllers
 {
+    [RoutePrefix("MyController")]
     public class CustomerController : Controller
     {
         static List<ClsCustomer> customers = new List<ClsCustomer>()
@@ -35,6 +36,7 @@ namespace MVCRoutingConceptDemo.Controllers
 
 
         // GET: Customer
+        [Route("MyCustomer")]
         public ActionResult Index()
         {
             var CustomerList = customers.ToList();

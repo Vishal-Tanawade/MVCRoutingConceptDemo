@@ -11,6 +11,9 @@ namespace MVCRoutingConceptDemo
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapMvcAttributeRoutes(); //This line added to enable attribute routing
+            //http://localhost:55203/MyController/MyCustomer
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
