@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCRoutingConceptDemo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,36 @@ namespace MVCRoutingConceptDemo.Controllers
 {
     public class CustomerController : Controller
     {
+        static List<ClsCustomer> customers = new List<ClsCustomer>()
+        {
+            new ClsCustomer()
+            {
+                CustCode=1001,
+                CustName="Vishal",
+                CustDOJ=new DateTime(2020,12,12)
+            },
+
+            new ClsCustomer()
+            {
+                CustCode=1002,
+                CustName="Mahesh",
+                CustDOJ=new DateTime(2021,12,12)
+            },
+            new ClsCustomer()
+            {
+                CustCode=null,
+                CustName="Sagar",
+                CustDOJ=null
+            }
+
+        };
+
+
         // GET: Customer
         public ActionResult Index()
         {
-            return View();
+            var CustomerList = customers.ToList();
+            return View(CustomerList);
         }
 
         // GET: Customer/Details/5
